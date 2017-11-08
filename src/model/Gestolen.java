@@ -15,6 +15,7 @@ public class Gestolen extends Voertuig {
 		super(voertuig.getLocatie());
 		this.setNummerPlaat(voertuig.getNummerPlaat());
 		this.setMerk(voertuig.getMerk());
+		
 	}
 
 	@Override

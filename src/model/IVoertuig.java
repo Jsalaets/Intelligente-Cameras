@@ -14,6 +14,7 @@ public interface IVoertuig {
 	public void setNummerPlaat(NummerPlaat nummerPlaat);
 	public String getMerk();
 	public void setMerk(String Merk);
+	public boolean getGeseind();
 	public void setGeseind (boolean geseind);
 	Locatie getLocatie();
 }

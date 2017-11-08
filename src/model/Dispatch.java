@@ -11,10 +11,12 @@ import java.util.LinkedList;
  * @project Intelligente Cameras
  * @purpose
  */
-public class Dispatch extends Actor {
+public class Dispatch extends Actor implements ISubject{
 
 	private LinkedList<Camera> cameras;
 	private LinkedList<IVoertuig> geseind;
+	private LinkedList<IVoertuig> gesignaleerd = new LinkedList<IVoertuig>();
+	private LinkedList<Patrouille> observers = new LinkedList<Patrouille>();
 	private static int count = 0;
 	
 	public Dispatch(Locatie locatie) {
@@ -47,16 +49,31 @@ public class Dispatch extends Actor {
 	}
 	
 	public void signaleer(IVoertuig voertuig) {
-		// TODO Auto-generated method stub
-		
+		this.gesignaleerd.add(voertuig);
 	}
+	
 	public void registerObserver(Patrouille patrouille) {
-		// TODO Auto-generated method stub
-		
+		observers.add(patrouille);
 	}
-	public Object getGesignaleerd() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public void removeObserver(Patrouille patrouille) {
+		observers.remove(patrouille);
+	}
+	
+	public LinkedList<IVoertuig> getGesignaleerd() {
+		return gesignaleerd;
+	}
+	/**
+	 * @return the observers
+	 */
+	public LinkedList<Patrouille> getObservers() {
+		return observers;
+	}
+	/**
+	 * @param observers the observers to set
+	 */
+	public void setObservers(LinkedList<Patrouille> observers) {
+		this.observers = observers;
 	}
 	
 	

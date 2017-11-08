@@ -81,8 +81,7 @@ public class TestIntelligenteCameras {
 	 * @param cameras
 	 * @param voertuigen
 	 */
-	private static void detecteerVoertuigen(LinkedList<Camera> cameras,
-			LinkedList<IVoertuig> voertuigen) {
+	private static void detecteerVoertuigen(LinkedList<Camera> cameras,	LinkedList<IVoertuig> voertuigen) {
 		ListIterator<IVoertuig> listVoertuigen = voertuigen.listIterator();
 		ListIterator<Camera> listCameras = cameras.listIterator();
 		IVoertuig voertuig;
@@ -93,7 +92,9 @@ public class TestIntelligenteCameras {
 				voertuig = listVoertuigen.next();
 				if (camera.getLocatie().equals(voertuig.getLocatie())) {
 					gedetecteerd.add(voertuig);
-					dispatch.signaleer(voertuig);
+					if (voertuig.getGeseind()) {
+						dispatch.signaleer(voertuig);
+					}
 				}
 			}
 		}
@@ -104,11 +105,9 @@ public class TestIntelligenteCameras {
 	 * Enkel beschikbare patrouilles kunnen worden ingezet voor een achtervolging
 	 * @param patrouilles
 	 */
-	private static void registreerPatrouilles(
-			LinkedList<Patrouille> patrouilles) {
+	private static void registreerPatrouilles(LinkedList<Patrouille> patrouilles) {
 
-		CopyOnWriteArrayList<Patrouille> copyList = new CopyOnWriteArrayList<Patrouille>(
-				patrouilles);
+		CopyOnWriteArrayList<Patrouille> copyList = new CopyOnWriteArrayList<Patrouille>(patrouilles);
 		// CopyOnWriteArrayList wordt gebruikt ter vervanging van LinkedList 
 		//om de onderliggende elementen te kunnen wijzigen.
 		ListIterator<Patrouille> list = copyList.listIterator();
@@ -117,7 +116,7 @@ public class TestIntelligenteCameras {
 		while (list.hasNext()) {
 			patrouille = list.next();
 			if (i++ % 3 == 0) {
-				dispatch.registerObserver(patrouille); //registreert elke 3de patrouille
+				dispatch.registerObserver(patrouille); //registreert elke 3de patrouille				
 			}
 		}
 	}
