@@ -15,9 +15,11 @@ public class Dispatch extends Actor {
 
 	private LinkedList<Camera> cameras;
 	private LinkedList<IVoertuig> geseind;
+	private static int count = 0;
 	
 	public Dispatch(Locatie locatie) {
 		super(locatie);
+		setCounter(++count);
 	}
 	/**
 	 * @return the cameras
@@ -43,6 +45,7 @@ public class Dispatch extends Actor {
 	public void setGeseind(LinkedList<IVoertuig> geseind) {
 		this.geseind = geseind;
 	}
+	
 	public void signaleer(IVoertuig voertuig) {
 		// TODO Auto-generated method stub
 		

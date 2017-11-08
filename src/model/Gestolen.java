@@ -13,17 +13,27 @@ public class Gestolen extends Voertuig {
 
 	public Gestolen (IVoertuig voertuig) {
 		super(voertuig.getLocatie());
-		super.setNummerPlaat(voertuig.getNummerPlaat());
-		super.setMerk(voertuig.getMerk());
+		this.setNummerPlaat(voertuig.getNummerPlaat());
+		this.setMerk(voertuig.getMerk());
 	}
 
 	@Override
 	public boolean getGeseind() {
-		return super.getNummerPlaat().isGeseind();
+		return this.getNummerPlaat().isGeseind();
 	}
 
 	@Override
 	public void setGeseind(boolean geseind) {
-		super.getNummerPlaat().setGeseind(geseind);
+		this.getNummerPlaat().setGeseind(geseind);
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return super.toString().concat(", en is geseind want Gestolen");
+	}
+	
+	
 }

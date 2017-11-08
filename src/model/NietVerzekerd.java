@@ -13,8 +13,8 @@ public class NietVerzekerd extends Voertuig {
 	
 	public NietVerzekerd(IVoertuig voertuig) {
 		super(voertuig.getLocatie());
-		super.setNummerPlaat(voertuig.getNummerPlaat());
-		super.setMerk(voertuig.getMerk());
+		this.setNummerPlaat(voertuig.getNummerPlaat());
+		this.setMerk(voertuig.getMerk());
 	}
 	
 	@Override
@@ -26,5 +26,8 @@ public class NietVerzekerd extends Voertuig {
 	public void setGeseind(boolean geseind) {
 		super.getNummerPlaat().setGeseind(geseind);
 	}
-
+	@Override
+	public String toString() {
+		return super.toString().concat(", en is geseind want niet Verzekerd");
+	}
 }

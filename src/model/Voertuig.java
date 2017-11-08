@@ -13,11 +13,12 @@ public class Voertuig extends Actor implements IVoertuig{
 
 	private NummerPlaat nummerPlaat;
 	private String merk;
-
+	private static int count = 0;
 	
 	public Voertuig(Locatie locatie) {
 
 		super(locatie);
+		setCounter(++count);
 	}
 
 	/**
@@ -71,8 +72,8 @@ public class Voertuig extends Actor implements IVoertuig{
 	 */
 	@Override
 	public String toString() {
-		return "Voertuig nr. " + "bevindt zich op " + getLocatie() + " met nummerplaat " + getNummerPlaat() + ", en is van het merk " +  getMerk() + System.lineSeparator();
-		//Voertuig nr. 1 bevindt zich op Diestestraat 1 met nummerplaat 1-BGS-535, en is van het merk Chevrolet
+		return super.toString().concat(" met nummerplaat " + getNummerPlaat().toString() + ", en is van het merk " + getMerk());
+		
 	}
 	
 	

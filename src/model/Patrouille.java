@@ -10,9 +10,10 @@ package model;
  * @purpose
  */
 public class Patrouille extends Actor {
-
+	private static int count = 0;
 	public Patrouille(Locatie locatie) {
 		super(locatie);
+		setCounter(++count);
 	}
 
 }
