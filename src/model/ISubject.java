@@ -12,4 +12,5 @@ package model;
 public interface ISubject {
 	public void registerObserver (Patrouille patrouille);
 	public void removeObserver( Patrouille patrouille);
+	public void notifyObservers();
 }

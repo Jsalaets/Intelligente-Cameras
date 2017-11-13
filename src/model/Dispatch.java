@@ -3,6 +3,7 @@
  */
 package model;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -50,6 +51,7 @@ public class Dispatch extends Actor implements ISubject{
 	
 	public void signaleer(IVoertuig voertuig) {
 		this.gesignaleerd.add(voertuig);
+		notifyObservers();
 	}
 	
 	public void registerObserver(Patrouille patrouille) {
@@ -76,6 +78,12 @@ public class Dispatch extends Actor implements ISubject{
 		this.observers = observers;
 	}
 	
-	
+	public void notifyObservers() {
+		Iterator<Patrouille> i = observers.iterator();
+		while (i.hasNext()) {
+			Patrouille p = i.next();
+			p.update(this);
+		}
+	}
 
 }

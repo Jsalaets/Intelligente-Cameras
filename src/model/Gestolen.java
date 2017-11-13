@@ -10,7 +10,7 @@ package model;
  * @purpose
  */
 public class Gestolen extends Voertuig {
-
+	
 	public Gestolen (IVoertuig voertuig) {
 		super(voertuig.getLocatie());
 		this.setNummerPlaat(voertuig.getNummerPlaat());
