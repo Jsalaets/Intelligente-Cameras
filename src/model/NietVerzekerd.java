@@ -9,23 +9,19 @@ package model;
  * @project Intelligente Cameras
  * @purpose
  */
-public class NietVerzekerd extends Voertuig {
+public class NietVerzekerd extends VoertuigDecorator {
 	
-	public NietVerzekerd(IVoertuig voertuig) {
-		super(voertuig.getLocatie());
-		this.setNummerPlaat(voertuig.getNummerPlaat());
-		this.setMerk(voertuig.getMerk());
+	private Voertuig nVoertuig;
+	
+	public NietVerzekerd (IVoertuig voertuig) {
+		this.nVoertuig = (Voertuig) voertuig;
+		
+		nVoertuig.getNummerPlaat();
+		nVoertuig.getMerk();
+		
 	}
 	
-	@Override
-	public boolean getGeseind() {
-		return super.getNummerPlaat().isGeseind();
-	}
 
-	@Override
-	public void setGeseind(boolean geseind) {
-		super.getNummerPlaat().setGeseind(geseind);
-	}
 	@Override
 	public String toString() {
 		return super.toString().concat(", en is geseind want niet Verzekerd");

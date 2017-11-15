@@ -3,6 +3,7 @@
  */
 package generator;
 
+//import org.apache.logging.log4j.Logger;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -31,6 +32,8 @@ public class Randomizer {
 	private static final int MAX_CAMERAS = 50;
 	private static final int MAX_PATROUILLES = 15;
 	private static final int MAX_VOERTUIGEN = 500;
+	
+	//static Logger log = Logger.getLogger(Randomizer.class.getName());
 
 	private static LinkedList<Locatie> locaties = getLocaties();
 

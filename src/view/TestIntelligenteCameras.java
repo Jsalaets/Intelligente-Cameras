@@ -13,6 +13,7 @@ import model.Camera;
 import model.Dispatch;
 import model.IVoertuig;
 import model.Patrouille;
+
 /**
  * @author jeroen salaets
  * @date 6 nov. 2017
@@ -97,7 +98,12 @@ public class TestIntelligenteCameras {
 					}
 				}
 			}
+			
 		}
+		if (!dispatch.getGesignaleerd().isEmpty()) {
+			dispatch.notifyObservers();
+		}
+		
 		System.out.printf("\n\nDe volgende Voertuigen werden door cameras gedetecteerd: %s", gedetecteerd);
 	}
 

@@ -51,15 +51,15 @@ public class Dispatch extends Actor implements ISubject{
 	
 	public void signaleer(IVoertuig voertuig) {
 		this.gesignaleerd.add(voertuig);
-		notifyObservers();
+		
 	}
 	
 	public void registerObserver(Patrouille patrouille) {
-		observers.add(patrouille);
+		getObservers().add(patrouille);
 	}
 	
 	public void removeObserver(Patrouille patrouille) {
-		observers.remove(patrouille);
+		getObservers().remove(patrouille);
 	}
 	
 	public LinkedList<IVoertuig> getGesignaleerd() {
@@ -79,7 +79,7 @@ public class Dispatch extends Actor implements ISubject{
 	}
 	
 	public void notifyObservers() {
-		Iterator<Patrouille> i = observers.iterator();
+		Iterator<Patrouille> i = getObservers().iterator();
 		while (i.hasNext()) {
 			Patrouille p = i.next();
 			p.update(this);

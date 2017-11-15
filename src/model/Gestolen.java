@@ -9,23 +9,16 @@ package model;
  * @project Intelligente Cameras
  * @purpose
  */
-public class Gestolen extends Voertuig {
+public class Gestolen extends VoertuigDecorator {
+	
+	private Voertuig gVoertuig;
 	
 	public Gestolen (IVoertuig voertuig) {
-		super(voertuig.getLocatie());
-		this.setNummerPlaat(voertuig.getNummerPlaat());
-		this.setMerk(voertuig.getMerk());
+		this.gVoertuig = (Voertuig) voertuig;
 		
-	}
-
-	@Override
-	public boolean getGeseind() {
-		return this.getNummerPlaat().isGeseind();
-	}
-
-	@Override
-	public void setGeseind(boolean geseind) {
-		this.getNummerPlaat().setGeseind(geseind);
+		gVoertuig.getNummerPlaat();
+		gVoertuig.getMerk();
+		
 	}
 
 	/* (non-Javadoc)
