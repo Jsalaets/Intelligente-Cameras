@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
- * @author jeroe
+ * @author jeroen salaets
  * @date 6 nov. 2017
  * @project Intelligente Cameras
  * @purpose

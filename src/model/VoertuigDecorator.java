@@ -4,7 +4,7 @@
 package model;
 
 /**
- * @author jeroe
+ * @author jeroen salaets
  * @date 13 nov. 2017
  * @project GitIntelligenteCameras
  * @purpose
