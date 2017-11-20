@@ -3,6 +3,8 @@
  */
 package model;
 
+import view.TestIntelligenteCameras;
+
 /**
  * @author jeroe
  * @date 6 nov. 2017
@@ -18,7 +20,7 @@ public class Patrouille extends Actor implements IObserver{
 	}
 	@Override
 	public void update(Dispatch dispatch) {
-		System.out.println(this.toString() + " zet achtervolging in voor " + dispatch.getGesignaleerd().toString());
+		TestIntelligenteCameras.LOGGER.info(this.toString() + " zet achtervolging in voor " + dispatch.getGesignaleerd().toString());
 	}
 			
 	/* (non-Javadoc)

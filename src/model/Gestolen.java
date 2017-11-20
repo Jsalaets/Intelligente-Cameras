@@ -11,23 +11,20 @@ package model;
  */
 public class Gestolen extends VoertuigDecorator {
 	
-	private Voertuig gVoertuig;
-	
 	public Gestolen (IVoertuig voertuig) {
-		this.gVoertuig = (Voertuig) voertuig;
-		
-		gVoertuig.getNummerPlaat();
-		gVoertuig.getMerk();
-		
+		super(voertuig);			
 	}
+	
 
+	public void setGeseind(boolean geseind) {
+		super.setGeseind(geseind);
+	}
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return super.toString().concat(", en is geseind want Gestolen");
-	}
-	
-	
+		return super.toString() + ", en is geseind want Gestolen";
+	}	
 }

@@ -32,7 +32,7 @@ public abstract class Actor {
 
 	@Override
 	public String toString() {
-		return "\n\t " + getClass().getName() + " nr. " + getCounter()+ " bevindt zich op " + getLocatie();
+		return System.lineSeparator() + "\t" + getClass().getName() + " nr. " + getCounter()+ " bevindt zich op " + getLocatie();
 	}
 } 
 

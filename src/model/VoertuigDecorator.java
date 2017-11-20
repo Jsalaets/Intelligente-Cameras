@@ -9,54 +9,28 @@ package model;
  * @project GitIntelligenteCameras
  * @purpose
  */
-public class VoertuigDecorator implements IVoertuig{
+public abstract class VoertuigDecorator implements IVoertuig{
 
-	IVoertuig voertuig;
+	private IVoertuig voertuig;
 	
-	public VoertuigDecorator() {
+	public VoertuigDecorator(IVoertuig ivoertuig) {
+		this.voertuig = ivoertuig;
 	}
 	
-	public NummerPlaat getNummerPlaat() {
-		return nummerPlaat;
-	}
-
-	/**
-	 * @param nummerPlaat the nummerPlaat to set
-	 */
-	public void setNummerPlaat(NummerPlaat nummerPlaat) {
-		this.nummerPlaat = nummerPlaat;
-	}
-
-	/**
-	 * @return the merk
-	 */
-	public String getMerk() {
-		return merk;
-	}
-
-	/**
-	 * @param merk the merk to set
-	 */
-	public void setMerk(String merk) {
-		this.merk = merk;
-	}
-
-	/**
-	 * @return the geseind
-	 */
-	public boolean getGeseind() {
-		return this.getNummerPlaat().isGeseind();
-	}
-
-	/**
-	 * @param geseind the geseind to set
-	 */
 	public void setGeseind(boolean geseind) {
-		this.getNummerPlaat().setGeseind(geseind);
-	}
-	@Override
-	public Locatie getLocatie() {
-		return super.getLocatie();
+		voertuig.setGeseind(geseind);
+	}	
+	
+	public boolean getGeseind() {
+		return voertuig.getGeseind();
 	}
 	
+	public Locatie getLocatie() {
+		return voertuig.getLocatie();
+	}
+	
+	@Override
+	public String toString() {
+		return voertuig.toString();
+	}
 }

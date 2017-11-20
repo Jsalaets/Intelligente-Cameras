@@ -8,6 +8,8 @@ import java.util.ListIterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import Factory.ActorFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import generator.Randomizer;
 import model.Camera;
 import model.Dispatch;
@@ -28,7 +30,8 @@ public class TestIntelligenteCameras {
 	public static LinkedList<IVoertuig> gedetecteerd;
 	public static LinkedList<IVoertuig> geseind;
 	public static Dispatch dispatch;
-
+	
+	public static Logger LOGGER = LogManager.getLogger(TestIntelligenteCameras.class.getName());
 
 	public static void main(String[] args) {
 		// basic data initialisatie
@@ -48,10 +51,10 @@ public class TestIntelligenteCameras {
 	 * 	 achtervolging simuleren
 	 */
 	private static void simuleerAchtervolging() {
-		System.out.println("\n\nDe achtervolging wordt ingezet: ");
+		LOGGER.info(System.lineSeparator() + System.lineSeparator() + "De achtervolging wordt ingezet: ");
 		registreerPatrouilles(patrouilles);
 		detecteerVoertuigen(cameras, voertuigen);
-		System.out.printf("\n\nDe volgende Voertuigen werden achtervolgd: %s",	dispatch.getGesignaleerd());
+		LOGGER.info(System.lineSeparator() + System.lineSeparator() + "De volgende Voertuigen werden achtervolgd: {}", dispatch.getGesignaleerd());
 	}
 
 	/**
@@ -70,11 +73,11 @@ public class TestIntelligenteCameras {
 	 * 	Afprinten gegevens
 	 */
 	private static void printBasicData() {
-		System.out.printf("De volgende Dispatch werd gegenereerd: %s", dispatch);
-		System.out.printf("\n\nDe volgende Voertuigen werden gegenereerd: %s",	voertuigen);
-		System.out.printf("\n\nDe volgende Patrouilles werden gegenereerd: %s", patrouilles);
-		System.out.printf("\n\nDe volgende Cameras werden gegenereerd: %s", dispatch.getCameras());
-		System.out.printf("\n\nDe volgende Voertuigen werden geseind: %s", dispatch.getGeseind());
+		LOGGER.info(System.lineSeparator() + System.lineSeparator() + "De volgende Dispatch werd gegenereerd: {}", dispatch);
+		LOGGER.info(System.lineSeparator() + System.lineSeparator() + "De volgende Voertuigen werden gegenereerd: {}",	voertuigen);
+		LOGGER.info(System.lineSeparator() + System.lineSeparator() + "De volgende Patrouilles werden gegenereerd: {}", patrouilles);
+		LOGGER.info(System.lineSeparator() + System.lineSeparator() + "De volgende Cameras werden gegenereerd: {}", dispatch.getCameras());
+		LOGGER.info(System.lineSeparator() + System.lineSeparator() + "De volgende Voertuigen werden geseind: {}", dispatch.getGeseind());
 	}
 
 	/**
@@ -104,7 +107,7 @@ public class TestIntelligenteCameras {
 			dispatch.notifyObservers();
 		}
 		
-		System.out.printf("\n\nDe volgende Voertuigen werden door cameras gedetecteerd: %s", gedetecteerd);
+		LOGGER.info(System.lineSeparator() + System.lineSeparator() + "De volgende Voertuigen werden door cameras gedetecteerd: {}", gedetecteerd);
 	}
 
 	/**

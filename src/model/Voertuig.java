@@ -4,7 +4,7 @@
 package model;
 
 /**
- * @author jeroe
+ * @author jeroen salaets
  * @date 6 nov. 2017
  * @project Intelligente Cameras
  * @purpose
@@ -74,7 +74,6 @@ public class Voertuig extends Actor implements IVoertuig{
 	public String toString() {
 		return super.toString().concat(" met nummerplaat " + getNummerPlaat().toString() + ", en is van het merk " + getMerk());
 		
-	}
-	
+	}	
 	
 }

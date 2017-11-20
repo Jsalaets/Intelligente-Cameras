@@ -11,19 +11,18 @@ package model;
  */
 public class NietVerzekerd extends VoertuigDecorator {
 	
-	private Voertuig nVoertuig;
 	
 	public NietVerzekerd (IVoertuig voertuig) {
-		this.nVoertuig = (Voertuig) voertuig;
-		
-		nVoertuig.getNummerPlaat();
-		nVoertuig.getMerk();
-		
+		super(voertuig);
 	}
 	
-
+	
+	public void setGeseind(boolean geseind) {
+		super.setGeseind(geseind);
+	}
+	
 	@Override
 	public String toString() {
-		return super.toString().concat(", en is geseind want niet Verzekerd");
+		return super.toString() + ", en is geseind want niet Verzekerd";
 	}
 }
