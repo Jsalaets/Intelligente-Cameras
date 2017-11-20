@@ -7,9 +7,11 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import Factory.ActorFactory;
-import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import Factory.ActorFactory;
+
 import generator.Randomizer;
 import model.Camera;
 import model.Dispatch;
