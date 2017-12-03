@@ -7,7 +7,7 @@ package model;
  * @author jeroen salaets
  * @date 7 nov. 2017
  * @project Intelligente Cameras
- * @purpose
+ * @purpose gestolen class onder decorator
  */
 public class Gestolen extends VoertuigDecorator {
 	

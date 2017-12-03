@@ -22,7 +22,7 @@ import model.Patrouille;
  * @author jeroen salaets
  * @date 6 nov. 2017
  * @project Intelligente Cameras
- * @purpose
+ * @purpose view class to run program
  */
 
 public class TestIntelligenteCameras {

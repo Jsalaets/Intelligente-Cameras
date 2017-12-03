@@ -7,7 +7,7 @@ package model;
  * @author jeroen salaets
  * @date 6 nov. 2017
  * @project Intelligente Cameras
- * @purpose
+ * @purpose voertuig interface
  */
 public interface IVoertuig {
 	

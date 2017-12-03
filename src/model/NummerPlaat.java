@@ -7,7 +7,7 @@ package model;
  * @author jeroen salaets
  * @date 6 nov. 2017
  * @project Intelligente Cameras
- * @purpose
+ * @purpose NummerPlaat class
  */
 public class NummerPlaat
 {//triviale properties en methods van een Nummerplaat

@@ -9,7 +9,7 @@ import Factory.ActorFactory;
  * @author jeroen salaets
  * @date 6 nov. 2017
  * @project Intelligente Cameras
- * @purpose
+ * @purpose camera class
  */
 public class Camera extends Actor
 {//triviale properties en methods van een Camera

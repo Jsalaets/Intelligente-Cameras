@@ -10,7 +10,7 @@ import java.util.LinkedList;
  * @author jeroen salaets
  * @date 6 nov. 2017
  * @project Intelligente Cameras
- * @purpose
+ * @purpose dispatch class
  */
 public class Dispatch extends Actor implements ISubject{
 

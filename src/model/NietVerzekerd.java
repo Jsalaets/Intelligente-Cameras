@@ -7,7 +7,7 @@ package model;
  * @author jeroen salaets
  * @date 7 nov. 2017
  * @project Intelligente Cameras
- * @purpose
+ * @purpose nietverzekerd class onder decorator
  */
 public class NietVerzekerd extends VoertuigDecorator {
 	

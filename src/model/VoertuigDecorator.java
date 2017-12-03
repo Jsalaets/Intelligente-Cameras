@@ -7,7 +7,7 @@ package model;
  * @author jeroen salaets
  * @date 13 nov. 2017
  * @project GitIntelligenteCameras
- * @purpose
+ * @purpose Voertuigdecorator class
  */
 public abstract class VoertuigDecorator implements IVoertuig{
 

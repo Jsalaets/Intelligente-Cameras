@@ -9,7 +9,7 @@ import view.TestIntelligenteCameras;
  * @author jeroen salaets
  * @date 6 nov. 2017
  * @project Intelligente Cameras
- * @purpose
+ * @purpose patrouille class 
  */
 public class Patrouille extends Actor implements IObserver{
 	private static int count = 0;
